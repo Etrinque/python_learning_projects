@@ -4,8 +4,8 @@ import random
 import time
 import copy
 
-WIDTH = 40
-HEIGHT = 40
+WIDTH = 60
+HEIGHT = 20
 
 # Creat list of list for cells:
 next_cells = []
@@ -19,15 +19,15 @@ for x in range(WIDTH):
     next_cells.append(column)           # List of Column Lists
 
 while True:                             # Main program loop
-    print('\n\n\n\n\n')                 # Separate step with newlines
+    print('-----\n-----\n-----\n-----\n-----\n')                 # Separate step with newlines
     current_cells = copy.deepcopy(next_cells) # Print Current_cells
     for y in range(HEIGHT):
         for x in range(WIDTH):
             print(current_cells[x][y], end=' ')
         print()                         # Calculate next step cells on current step cells
     for x in range(WIDTH):
-        for y in range(HEIGHT):
                                         # Ensures cell is within 0 and (arg - 1)
+        for y in range(HEIGHT):
             left_coord = (x - 1) % WIDTH
             right_coord = (x + 1) % WIDTH
             above_coord = (y - 1) % HEIGHT
@@ -62,4 +62,3 @@ while True:                             # Main program loop
                                         # Everyhting else dies
     time.sleep(1)
                                         # Add 1 second pause
-
